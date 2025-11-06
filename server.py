@@ -50,9 +50,10 @@ async def ocr_azure(file: UploadFile = File(...)):
     # Build Azure URL and query params
     url = f"{AZURE_ENDPOINT_BASE}/computervision/imageanalysis:analyze"
     params = {
-        "api-version": "2023-02-01-preview",
-        "features": "read",     # use the Read OCR
-        "language": "en",
+    "api-version": "2024-02-01",
+    "features": "read",
+    "model-version": "latest",
+    "language": "en",
     }
 
     headers = {
